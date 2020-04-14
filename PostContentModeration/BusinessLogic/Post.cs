@@ -9,22 +9,37 @@ namespace BusinessLogic
     public class Post
     {
         private string title;
-        public string Title { get { return title; } private set { setTitle(value); } }
+        private string body;
 
-        public string Body { get; private set; }
+        public string Title { get { return title; } private set { SetTitle(value); } }
+
+        public string Body { get { return body; } private set { SetBody(value); } }
+
         public DateTime DatePublished { get; private set; }
 
-        public Post(string aTitle, string aBody, DateTime aDate) {
+        public Post(string aTitle, string aBody, DateTime aDate)
+        {
             Title = aTitle;
             Body = aBody;
             DatePublished = aDate;
         }
 
-        private void setTitle(string aTitle) {
-            if (string.IsNullOrWhiteSpace(aTitle)) {
+        private void SetTitle(string aTitle)
+        {
+            if (string.IsNullOrWhiteSpace(aTitle))
+            {
                 throw new InvalidPostException("Title can't be empty.");
             }
             title = aTitle;
+        }
+
+        private void SetBody(string aBody)
+        {
+            if (string.IsNullOrWhiteSpace(aBody))
+            {
+                throw new InvalidPostException("Body can't be empty.");
+            }
+            body = aBody;
         }
     }
 }
