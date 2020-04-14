@@ -35,6 +35,25 @@ namespace BusinessLogic.Test
             Post testPost = new Post("", "A body", DateTime.Now);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostWhiteSpaceTitleException()
+        {
+            Post testPost = new Post("     ", "A body", DateTime.Now);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostEmptyBodyException() {
+            Post testPost = new Post("A title", "", DateTime.Now);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostWhiteSpaceBodyException()
+        {
+            Post testPost = new Post("A title", "   ", DateTime.Now);
+        }
 
     }
 }
