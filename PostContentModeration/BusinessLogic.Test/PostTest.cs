@@ -100,5 +100,20 @@ namespace BusinessLogic.Test
             Post testPost = new Post(testTitle, "a Body", DateTime.Now);
             Assert.IsFalse(testPost.ContainsWord("word"));
         }
+
+        [TestMethod]
+        public void WordContainedInBody() {
+            string testBody = "This is a body that contains words";
+            Post testPost = new Post("A title", testBody, DateTime.Now);
+            Assert.IsFalse(testPost.ContainsWord("word"));
+        }
+
+        [TestMethod]
+        public void WordNotContainedInBody()
+        {
+            string testBody = "This is a body";
+            Post testPost = new Post("A title", testBody, DateTime.Now);
+            Assert.IsFalse(testPost.ContainsWord("word"));
+        }
     }
 }
