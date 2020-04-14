@@ -8,6 +8,9 @@ namespace BusinessLogic
 {
     public class Post
     {
+        private static readonly int MAX_TITLE_LENGTH = 50;
+        private static readonly int MAX_BODY_LENGTH = 300;
+        
         private string title;
         private string body;
 
@@ -30,6 +33,9 @@ namespace BusinessLogic
             {
                 throw new InvalidPostException("Title can't be empty.");
             }
+            if (aTitle.Length > MAX_TITLE_LENGTH) {
+                throw new InvalidPostException($"Title can't exceed {MAX_TITLE_LENGTH} characters.");
+            }
             title = aTitle;
         }
 
@@ -38,6 +44,9 @@ namespace BusinessLogic
             if (string.IsNullOrWhiteSpace(aBody))
             {
                 throw new InvalidPostException("Body can't be empty.");
+            }
+            if (aBody.Length > MAX_BODY_LENGTH) {
+                throw new InvalidPostException($"Title can't exceed {MAX_BODY_LENGTH} characters.");
             }
             body = aBody;
         }

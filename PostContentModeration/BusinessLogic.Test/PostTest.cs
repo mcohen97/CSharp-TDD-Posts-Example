@@ -63,7 +63,6 @@ namespace BusinessLogic.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidPostException))]
         public void NewPostMaxLengthTitleTest()
         {
             string testTitle = new string('a', 50);
@@ -80,13 +79,11 @@ namespace BusinessLogic.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(InvalidPostException))]
         public void NewPostMaxLengthBodyTest()
         {
             string testBody = new string('a', 300);
             Post testPost = new Post("A title", testBody, DateTime.Now);
             Assert.AreEqual(testBody, testPost.Body);
-
         }
     }
 }
