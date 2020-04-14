@@ -8,7 +8,9 @@ namespace BusinessLogic
 {
     public class Post
     {
-        public string Title { get; private set; }
+        private string title;
+        public string Title { get { return title; } private set { setTitle(value); } }
+
         public string Body { get; private set; }
         public DateTime DatePublished { get; private set; }
 
@@ -16,6 +18,13 @@ namespace BusinessLogic
             Title = aTitle;
             Body = aBody;
             DatePublished = aDate;
+        }
+
+        private void setTitle(string aTitle) {
+            if (string.IsNullOrWhiteSpace(aTitle)) {
+                throw new InvalidPostException("Title can't be empty.");
+            }
+            title = aTitle;
         }
     }
 }
