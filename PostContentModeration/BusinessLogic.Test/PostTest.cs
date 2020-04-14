@@ -7,7 +7,7 @@ namespace BusinessLogic.Test
     public class PostTest
     {
         [TestMethod]
-        public void GetTitleTest()
+        public void NewPostTitleTest()
         {
             string testTitle = "A title";
             Post testPost = new Post(testTitle, "A body", DateTime.Now);
@@ -15,10 +15,26 @@ namespace BusinessLogic.Test
         }
 
         [TestMethod]
-        public void GetBodyTest() {
+        public void NewPostBodyTest() {
             string testBody = "A body";
             Post testPost = new Post("A title", testBody, DateTime.Now);
             Assert.AreEqual(testBody, testPost.Body);
         }
+
+        [TestMethod]
+        public void NewPostPublishedDateTest() {
+
+            DateTime testDate = DateTime.Now.AddDays(-1); //Yesterday
+            Post testPost = new Post("A title", "A body", testDate);
+            Assert.AreEqual(testDate, testPost.DatePublished);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostEmptyTitleException() {
+            Post testPost = new Post("", "A body", DateTime.Now);
+        }
+
+
     }
 }
