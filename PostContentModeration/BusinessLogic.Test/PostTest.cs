@@ -105,7 +105,7 @@ namespace BusinessLogic.Test
         public void WordContainedInBody() {
             string testBody = "This is a body that contains words";
             Post testPost = new Post("A title", testBody, DateTime.Now);
-            Assert.IsFalse(testPost.ContainsWord("word"));
+            Assert.IsTrue(testPost.ContainsWord("word"));
         }
 
         [TestMethod]

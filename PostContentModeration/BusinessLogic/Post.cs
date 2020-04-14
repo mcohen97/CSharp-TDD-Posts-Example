@@ -10,7 +10,7 @@ namespace BusinessLogic
     {
         private static readonly int MAX_TITLE_LENGTH = 50;
         private static readonly int MAX_BODY_LENGTH = 300;
-        
+
         private string title;
         private string body;
 
@@ -49,6 +49,11 @@ namespace BusinessLogic
                 throw new InvalidPostException($"Title can't exceed {MAX_BODY_LENGTH} characters.");
             }
             body = aBody;
+        }
+
+        public bool ContainsWord(string word)
+        {
+            return Title.Contains(word) || Body.Contains(word);
         }
     }
 }
