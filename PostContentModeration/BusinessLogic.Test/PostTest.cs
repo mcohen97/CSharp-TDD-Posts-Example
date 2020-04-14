@@ -55,5 +55,17 @@ namespace BusinessLogic.Test
             Post testPost = new Post("A title", "   ", DateTime.Now);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostTooLongTitleTest() {
+            Post testPost = new Post("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "A body", DateTime.Now);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostTooLongBodyTest()
+        {
+            Post testPost = new Post("A title", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", DateTime.Now);
+        }
     }
 }
