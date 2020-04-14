@@ -58,14 +58,35 @@ namespace BusinessLogic.Test
         [TestMethod]
         [ExpectedException(typeof(InvalidPostException))]
         public void NewPostTooLongTitleTest() {
-            Post testPost = new Post("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "A body", DateTime.Now);
+            string testTitle = new string('a', 51);
+            Post testPost = new Post(testTitle, "A body", DateTime.Now);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostMaxLengthTitleTest()
+        {
+            string testTitle = new string('a', 50);
+            Post testPost = new Post(testTitle, "A body", DateTime.Now);
+            Assert.AreEqual(testTitle, testPost.Title);
         }
 
         [TestMethod]
         [ExpectedException(typeof(InvalidPostException))]
         public void NewPostTooLongBodyTest()
         {
-            Post testPost = new Post("A title", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", DateTime.Now);
+            string testBody = new string('a', 301);
+            Post testPost = new Post("A title", testBody, DateTime.Now);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void NewPostMaxLengthBodyTest()
+        {
+            string testBody = new string('a', 300);
+            Post testPost = new Post("A title", testBody, DateTime.Now);
+            Assert.AreEqual(testBody, testPost.Body);
+
         }
     }
 }
