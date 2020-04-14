@@ -90,7 +90,15 @@ namespace BusinessLogic.Test
         public void WordContainedInTitleTest() {
             string testTitle = "This is a title that contains words";
             Post testPost = new Post(testTitle, "a Body", DateTime.Now);
-            Assert.IsTrue(testPost.ContainsWord("word"));
+            Assert.IsTrue(testPost.ContainsWord("words"));
+        }
+
+        [TestMethod]
+        public void SimilarWordNotTest()
+        {
+            string testTitle = "This is a title that contains words";
+            Post testPost = new Post(testTitle, "a Body", DateTime.Now);
+            Assert.IsFalse(testPost.ContainsWord("word"));
         }
 
         [TestMethod]
@@ -98,14 +106,14 @@ namespace BusinessLogic.Test
         {
             string testTitle = "This is a title";
             Post testPost = new Post(testTitle, "a Body", DateTime.Now);
-            Assert.IsFalse(testPost.ContainsWord("word"));
+            Assert.IsFalse(testPost.ContainsWord("words"));
         }
 
         [TestMethod]
         public void WordContainedInBody() {
             string testBody = "This is a body that contains words";
             Post testPost = new Post("A title", testBody, DateTime.Now);
-            Assert.IsTrue(testPost.ContainsWord("word"));
+            Assert.IsTrue(testPost.ContainsWord("words"));
         }
 
         [TestMethod]
@@ -113,7 +121,7 @@ namespace BusinessLogic.Test
         {
             string testBody = "This is a body";
             Post testPost = new Post("A title", testBody, DateTime.Now);
-            Assert.IsFalse(testPost.ContainsWord("word"));
+            Assert.IsFalse(testPost.ContainsWord("words"));
         }
     }
 }
