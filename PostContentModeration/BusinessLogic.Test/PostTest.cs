@@ -85,5 +85,20 @@ namespace BusinessLogic.Test
             Post testPost = new Post("A title", testBody, DateTime.Now);
             Assert.AreEqual(testBody, testPost.Body);
         }
+
+        [TestMethod]
+        public void WordContainedInTitleTest() {
+            string testTitle = "This is a title that contains words";
+            Post testPost = new Post(testTitle, "a Body", DateTime.Now);
+            Assert.IsTrue(testPost.ContainsWord("word"));
+        }
+
+        [TestMethod]
+        public void WordNotContainedInTitleTest()
+        {
+            string testTitle = "This is a title";
+            Post testPost = new Post(testTitle, "a Body", DateTime.Now);
+            Assert.IsFalse(testPost.ContainsWord("word"));
+        }
     }
 }
