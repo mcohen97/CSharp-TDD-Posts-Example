@@ -6,6 +6,11 @@ namespace BusinessLogic.Test
     [TestClass]
     public class PostTest
     {
+        [TestInitialize]
+        public void SetUp() {
+            //variables globales
+        }
+
         [TestMethod]
         public void NewPostTitleTest()
         {
@@ -94,7 +99,7 @@ namespace BusinessLogic.Test
         }
 
         [TestMethod]
-        public void SimilarWordNotTest()
+        public void SimilarWordNotContainedInTitleTest()
         {
             string testTitle = "This is a title that contains words";
             Post testPost = new Post(testTitle, "a Body", DateTime.Now);
@@ -122,6 +127,14 @@ namespace BusinessLogic.Test
             string testBody = "This is a body";
             Post testPost = new Post("A title", testBody, DateTime.Now);
             Assert.IsFalse(testPost.ContainsWord("words"));
+        }
+
+        [TestMethod]
+        public void SimilarWordNotContainedInBodyTest()
+        {
+            string testBody = "This is a body that contains words";
+            Post testPost = new Post("A title", testBody, DateTime.Now);
+            Assert.IsFalse(testPost.ContainsWord("word"));
         }
     }
 }

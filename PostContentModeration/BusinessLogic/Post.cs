@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BusinessLogic
@@ -53,7 +54,14 @@ namespace BusinessLogic
 
         public bool ContainsWord(string word)
         {
-            return Title.Contains(word) || Body.Contains(word);
+            List<string> tokens = new List<string>();
+
+            string delimiterRegex = @"\W+";
+
+            tokens.AddRange(Regex.Split(Body, delimiterRegex));
+            tokens.AddRange(Regex.Split(Title, delimiterRegex));
+
+            return tokens.Any(t => t.Equals(word));
         }
     }
 }
