@@ -27,14 +27,6 @@ namespace BusinessLogic.Test
         }
 
         [TestMethod]
-        public void NewPostPublishedDateTest() {
-
-            DateTime testDate = DateTime.Now.AddDays(-1); //Yesterday
-            Post testPost = new Post("A title", "A body", testDate);
-            Assert.AreEqual(testDate, testPost.DatePublished);
-        }
-
-        [TestMethod]
         [ExpectedException(typeof(InvalidPostException))]
         public void NewPostEmptyTitleException() {
             Post testPost = new Post("", "A body", DateTime.Now);
@@ -89,6 +81,21 @@ namespace BusinessLogic.Test
             string testBody = new string('a', 300);
             Post testPost = new Post("A title", testBody, DateTime.Now);
             Assert.AreEqual(testBody, testPost.Body);
+        }
+
+        [TestMethod]
+        public void NewPostPublishedDateTest()
+        {
+
+            DateTime testDate = DateTime.Now.AddDays(-1); //Yesterday.
+            Post testPost = new Post("A title", "A body", testDate);
+            Assert.AreEqual(testDate, testPost.DatePublished);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidPostException))]
+        public void FuturePublishedDateTest() {
+            Post testPost = new Post("A title", "A body", DateTime.Now.AddDays(1)); //Tomorrow.
         }
 
         [TestMethod]
