@@ -14,12 +14,13 @@ namespace BusinessLogic
 
         private string title;
         private string body;
+        private DateTime publishedDate;
 
         public string Title { get { return title; } private set { SetTitle(value); } }
 
         public string Body { get { return body; } private set { SetBody(value); } }
 
-        public DateTime DatePublished { get; private set; }
+        public DateTime DatePublished { get { return publishedDate;  } private set { SetPublishedDate(value); } }
 
         public Post(string aTitle, string aBody, DateTime aDate)
         {
@@ -50,6 +51,14 @@ namespace BusinessLogic
                 throw new InvalidPostException($"Title can't exceed {MAX_BODY_LENGTH} characters.");
             }
             body = aBody;
+        }
+
+        private void SetPublishedDate(DateTime date)
+        {
+            if (date > DateTime.Now) {
+                throw new InvalidPostException("Posts can't have future dates.");
+            }
+            publishedDate = date;
         }
 
         public bool ContainsWord(string word)
