@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class Class1
+    public class InvalidPostException: Exception
     {
+        public InvalidPostException(string msg) : base(msg) {
+        }
     }
 }
