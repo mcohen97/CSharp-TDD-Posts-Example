@@ -34,7 +34,6 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbBody = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -89,15 +88,6 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "label1";
-            // 
             // lbError
             // 
             this.lbError.AutoSize = true;
@@ -112,7 +102,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lbError);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.lbBody);
             this.Controls.Add(this.lbTitle);
@@ -134,7 +123,6 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbBody;
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbError;
     }
 }

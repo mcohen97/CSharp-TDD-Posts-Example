@@ -36,6 +36,7 @@ namespace UserInterface
                 //TODO: Add date control
                 Post newPost = new Post(title, body, DateTime.Now);
                 posts.Add(newPost);
+                PostCreatedEvent();
             }
             catch (InvalidPostException ex) {
                 lbError.Text = ex.Message;
