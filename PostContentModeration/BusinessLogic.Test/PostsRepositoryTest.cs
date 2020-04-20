@@ -50,7 +50,7 @@ namespace BusinessLogic.Test
         public void GetPostTest() {
             Post post = new Post("Title", "Body", DateTime.Now);
             testRepo.Add(post);
-            Assert.AreEqual(post.Title, testRepo.Get(post.Id));
+            Assert.AreEqual(post.Title, testRepo.Get(post.Id).Title);
         }
     }
 }
