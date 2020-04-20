@@ -7,6 +7,7 @@ namespace BusinessLogic.Test
     public class PostsRepositoryTest
     {
         PostsRepository testRepo;
+
         [TestInitialize]
         public void SetUp() {
             testRepo = new PostsRepository(); 
@@ -35,6 +36,14 @@ namespace BusinessLogic.Test
         [TestMethod]
         public void NotExistsPostTest() {
             Assert.IsFalse(testRepo.Exists(10));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(PostAlreadyExistsExeption))]
+        public void AddRepeatedPostTest() {
+            Post post = new Post("Title", "Body", DateTime.Now);
+            testRepo.Add(post);
+            testRepo.Add(post);
         }
     }
 }
