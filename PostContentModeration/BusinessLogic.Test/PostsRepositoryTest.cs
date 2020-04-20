@@ -52,5 +52,11 @@ namespace BusinessLogic.Test
             testRepo.Add(post);
             Assert.AreEqual(post.Title, testRepo.Get(post.Id).Title);
         }
+
+        [TestMethod]
+        [ExpectedException (typeof (PostNotFoundExeption))]
+        public void GetPostNotExistingTest() {
+            testRepo.Get(10);
+        }
     }
 }
