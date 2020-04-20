@@ -30,8 +30,12 @@ namespace BusinessLogic
         }
 
         public Post Get(int id)
-        {
-            return posts.First(p => p.Id == id);
+        { 
+            Post result =  posts.FirstOrDefault(p => p.Id == id);
+            if (result == null) {
+                throw new PostNotFoundExeption();
+            }
+            return result;
         }
     }
 }

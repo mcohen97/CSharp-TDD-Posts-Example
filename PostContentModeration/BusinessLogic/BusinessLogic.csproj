@@ -44,6 +44,7 @@
     <Compile Include="InvalidPostException.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="PostAlreadyExistsExeption.cs" />
+    <Compile Include="PostNotFoundExeption.cs" />
     <Compile Include="PostsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
