@@ -28,6 +28,7 @@ namespace BusinessLogic.Test
         [TestMethod]
         public void ExistsPostTest() {
             Post post = new Post("Title", "Body", DateTime.Now);
+            testRepo.Add(post);
             Assert.IsTrue(testRepo.Exists(post.Id));
         }
 
