@@ -37,5 +37,10 @@ namespace BusinessLogic
             }
             return result;
         }
+
+        public IEnumerable<Post> GetAll()
+        {
+            return posts.AsEnumerable();
+        }
     }
 }
