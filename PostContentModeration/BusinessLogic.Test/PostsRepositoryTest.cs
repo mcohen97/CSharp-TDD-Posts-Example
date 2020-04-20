@@ -22,7 +22,7 @@ namespace BusinessLogic.Test
         public void AddPostNotEmptyTest()
         {
             testRepo.Add(new Post("Title", "Body", DateTime.Now));
-            Assert.IsFalse(!testRepo.IsEmpty());
+            Assert.IsFalse(testRepo.IsEmpty());
         }
     }
 }
