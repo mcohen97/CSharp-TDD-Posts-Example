@@ -6,9 +6,16 @@ namespace BusinessLogic.Test
     [TestClass]
     public class PostsRepositoryTest
     {
+        PostsRepository testRepo;
+        [TestInitialize]
+        public void SetUp() {
+            testRepo = PostsRepository(); 
+        }
+
         [TestMethod]
-        public void TestMethod1()
+        public void NewRepositoryEmptyTest()
         {
+            Assert.IsTrue(testRepo.IsEmpty());
         }
     }
 }
