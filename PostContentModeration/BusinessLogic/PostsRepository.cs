@@ -42,5 +42,13 @@ namespace BusinessLogic
         {
             return posts.AsEnumerable();
         }
+
+        public void Delete(int id)
+        {
+            int deleted = posts.RemoveAll(p => p.Id == id);
+            if (deleted == 0) {
+                throw new PostNotFoundExeption();
+            }
+        }
     }
 }
