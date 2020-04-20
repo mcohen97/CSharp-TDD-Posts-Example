@@ -60,6 +60,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowPostsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShowPostsView.Designer.cs">
+      <DependentUpon>ShowPostsView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AppWindow.resx">
       <DependentUpon>AppWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowPostsView.resx">
+      <DependentUpon>ShowPostsView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

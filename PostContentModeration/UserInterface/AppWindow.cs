@@ -32,5 +32,9 @@ namespace UserInterface
 
         }
 
+        private void BtnViewPosts_Click(object sender, EventArgs e)
+        {
+      
+        }
     }
 }

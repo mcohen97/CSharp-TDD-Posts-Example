@@ -120,7 +120,7 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.createPostTitle);
             this.Name = "CreatePostView";
-            this.Size = new System.Drawing.Size(666, 376);
+            this.Size = new System.Drawing.Size(800, 370);
             this.ResumeLayout(false);
             this.PerformLayout();
 

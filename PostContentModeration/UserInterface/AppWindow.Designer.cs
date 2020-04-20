@@ -30,8 +30,8 @@
         {
             this.optionPanel = new System.Windows.Forms.Panel();
             this.buttonsPanel = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnViewPosts = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.buttonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             // 
             this.optionPanel.Location = new System.Drawing.Point(-2, 82);
             this.optionPanel.Name = "optionPanel";
-            this.optionPanel.Size = new System.Drawing.Size(802, 370);
+            this.optionPanel.Size = new System.Drawing.Size(800, 370);
             this.optionPanel.TabIndex = 0;
             // 
             // buttonsPanel
@@ -51,6 +51,16 @@
             this.buttonsPanel.Size = new System.Drawing.Size(801, 84);
             this.buttonsPanel.TabIndex = 1;
             // 
+            // btnViewPosts
+            // 
+            this.btnViewPosts.Location = new System.Drawing.Point(163, 21);
+            this.btnViewPosts.Name = "btnViewPosts";
+            this.btnViewPosts.Size = new System.Drawing.Size(129, 46);
+            this.btnViewPosts.TabIndex = 1;
+            this.btnViewPosts.Text = "View Posts";
+            this.btnViewPosts.UseVisualStyleBackColor = true;
+            this.btnViewPosts.Click += new System.EventHandler(this.BtnViewPosts_Click);
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(14, 21);
@@ -60,15 +70,6 @@
             this.btnAdd.Text = "Create Post";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
-            // 
-            // btnViewPosts
-            // 
-            this.btnViewPosts.Location = new System.Drawing.Point(163, 21);
-            this.btnViewPosts.Name = "btnViewPosts";
-            this.btnViewPosts.Size = new System.Drawing.Size(129, 46);
-            this.btnViewPosts.TabIndex = 1;
-            this.btnViewPosts.Text = "View Posts";
-            this.btnViewPosts.UseVisualStyleBackColor = true;
             // 
             // AppWindow
             // 
