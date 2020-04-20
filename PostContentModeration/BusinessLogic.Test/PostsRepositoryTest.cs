@@ -74,5 +74,19 @@ namespace BusinessLogic.Test
             IEnumerable<Post> allPosts = testRepo.GetAll();
             Assert.AreEqual(3, allPosts.Count());
         }
+
+        [TestMethod]
+        public void DeleteExistentTest() {
+            Post post = new Post("Title", "Body", DateTime.Now);
+            testRepo.Add(post);
+            Assert.IsTrue(testRepo.Exists(post.Id));
+            testRepo.Delete(post.Id);
+            Assert.IsFalse(testRepo.Exists(post.Id));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(PostNotFoundExeption))]
+        public void DeleteNonExistentTest() {
+        }
     }
 }
