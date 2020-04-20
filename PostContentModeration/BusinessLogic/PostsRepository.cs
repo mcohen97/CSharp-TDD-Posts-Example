@@ -14,6 +14,9 @@ namespace BusinessLogic
 
         public void Add(Post post)
         {
+            if (posts.Any(p => p.Id == post.Id)) {
+                throw new PostAlreadyExistsExeption();
+            }
             posts.Add(post);
         }
         public bool IsEmpty()
