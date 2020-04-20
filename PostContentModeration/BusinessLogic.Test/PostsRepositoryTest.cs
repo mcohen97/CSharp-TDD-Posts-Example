@@ -17,5 +17,12 @@ namespace BusinessLogic.Test
         {
             Assert.IsTrue(testRepo.IsEmpty());
         }
+
+        [TestMethod]
+        public void AddPostNotEmptyTest()
+        {
+            testRepo.Add(new Post("Title", "Body", DateTime.Now));
+            Assert.IsFalse(!testRepo.IsEmpty());
+        }
     }
 }
