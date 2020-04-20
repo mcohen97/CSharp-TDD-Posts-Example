@@ -45,5 +45,12 @@ namespace BusinessLogic.Test
             testRepo.Add(post);
             testRepo.Add(post);
         }
+
+        [TestMethod]
+        public void GetPostTest() {
+            Post post = new Post("Title", "Body", DateTime.Now);
+            testRepo.Add(post);
+            Assert.AreEqual(post.Title, testRepo.Get(post.Id));
+        }
     }
 }
