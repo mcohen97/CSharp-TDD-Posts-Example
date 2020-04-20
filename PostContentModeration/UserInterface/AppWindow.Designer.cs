@@ -59,6 +59,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Create Post";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnViewPosts
             // 
@@ -68,6 +69,7 @@
             this.btnViewPosts.TabIndex = 1;
             this.btnViewPosts.Text = "View Posts";
             this.btnViewPosts.UseVisualStyleBackColor = true;
+            this.btnViewPosts.Click += new System.EventHandler(this.btnViewPosts_Click);
             // 
             // AppWindow
             // 
