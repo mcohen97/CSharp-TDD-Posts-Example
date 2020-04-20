@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.createPostTitle = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtBody = new System.Windows.Forms.TextBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.lbBody = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // createPostTitle
@@ -45,19 +47,19 @@
             this.createPostTitle.TabIndex = 0;
             this.createPostTitle.Text = "Create Post";
             // 
-            // textBox1
+            // txtTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtTitle.Location = new System.Drawing.Point(186, 97);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.TabIndex = 1;
             // 
-            // textBox3
+            // txtBody
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(277, 20);
-            this.textBox3.TabIndex = 3;
+            this.txtBody.Location = new System.Drawing.Point(186, 153);
+            this.txtBody.Name = "txtBody";
+            this.txtBody.Size = new System.Drawing.Size(277, 20);
+            this.txtBody.TabIndex = 3;
             // 
             // lbTitle
             // 
@@ -85,16 +87,37 @@
             this.btnCreate.TabIndex = 6;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
+            // 
+            // lbError
+            // 
+            this.lbError.AutoSize = true;
+            this.lbError.ForeColor = System.Drawing.Color.Red;
+            this.lbError.Location = new System.Drawing.Point(371, 221);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(0, 13);
+            this.lbError.TabIndex = 8;
             // 
             // CreatePostView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbError);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.lbBody);
             this.Controls.Add(this.lbTitle);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBody);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.createPostTitle);
             this.Name = "CreatePostView";
             this.Size = new System.Drawing.Size(666, 376);
@@ -106,10 +129,12 @@
         #endregion
 
         private System.Windows.Forms.Label createPostTitle;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtBody;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbBody;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbError;
     }
 }

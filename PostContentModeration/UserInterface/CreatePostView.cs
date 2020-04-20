@@ -11,14 +11,35 @@ using BusinessLogic;
 
 namespace UserInterface
 {
+    public delegate void HandleCreation();
     public partial class CreatePostView : UserControl
     {
         private PostsRepository posts;
+        private event HandleCreation PostCreatedEvent;
+
         public CreatePostView(PostsRepository repository)
         {
             InitializeComponent();
             posts = repository;
         }
 
+        public void AddListener(HandleCreation del) {
+            PostCreatedEvent += del;
+        }
+
+        private void BtnCreate_Click(object sender, EventArgs e)
+        {
+            try {
+                string title = txtTitle.Text;
+                string body = txtBody.Text;
+
+                //TODO: Add date control
+                Post newPost = new Post(title, body, DateTime.Now);
+                posts.Add(newPost);
+            }
+            catch (InvalidPostException ex) {
+                lbError.Text = ex.Message;
+            }
+        }
     }
 }

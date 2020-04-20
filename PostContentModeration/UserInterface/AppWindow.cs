@@ -21,9 +21,15 @@ namespace UserInterface
             posts = new PostsRepository();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
-           optionPanel.Controls.Add(new CreatePostView(posts));
+           CreatePostView view = new CreatePostView(posts);
+           view.AddListener(PostCreated);
+           optionPanel.Controls.Add(view);
+        }
+
+        private void PostCreated() {
+
         }
 
     }
