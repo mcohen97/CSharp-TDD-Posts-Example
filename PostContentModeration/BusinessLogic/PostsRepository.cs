@@ -28,5 +28,10 @@ namespace BusinessLogic
         {
             return posts.Any(p => p.Id == id);
         }
+
+        public Post Get(int id)
+        {
+            return posts.First(p => p.Id == id);
+        }
     }
 }
