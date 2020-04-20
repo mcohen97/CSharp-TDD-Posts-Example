@@ -11,7 +11,9 @@ namespace BusinessLogic
     {
         private static readonly int MAX_TITLE_LENGTH = 50;
         private static readonly int MAX_BODY_LENGTH = 300;
+        private static int nextId = 1;
 
+        private int id;
         private string title;
         private string body;
         private DateTime publishedDate;
@@ -22,11 +24,14 @@ namespace BusinessLogic
 
         public DateTime DatePublished { get { return publishedDate;  } private set { SetPublishedDate(value); } }
 
+        public int Id { get { return id; } set { id = value; } }
+
         public Post(string aTitle, string aBody, DateTime aDate)
         {
             Title = aTitle;
             Body = aBody;
             DatePublished = aDate;
+            Id = nextId++;
         }
 
         private void SetTitle(string aTitle)
