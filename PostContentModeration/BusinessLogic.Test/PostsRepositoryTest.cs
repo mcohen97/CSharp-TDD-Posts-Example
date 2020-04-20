@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace BusinessLogic.Test
@@ -57,6 +59,20 @@ namespace BusinessLogic.Test
         [ExpectedException (typeof (PostNotFoundExeption))]
         public void GetPostNotExistingTest() {
             testRepo.Get(10);
+        }
+
+        [TestMethod]
+        public void GetAllPostsTest() {
+            Post post1 = new Post("Title1", "Body1", DateTime.Now);
+            Post post2 = new Post("Title2", "Body2", DateTime.Now);
+            Post post3 = new Post("Title3", "Body3", DateTime.Now);
+
+            testRepo.Add(post1);
+            testRepo.Add(post2);
+            testRepo.Add(post3);
+
+            IEnumerable<Post> allPosts = testRepo.GetAll();
+            Assert.AreEqual(3, allPosts.Count());
         }
     }
 }
