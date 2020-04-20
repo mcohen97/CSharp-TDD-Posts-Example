@@ -87,6 +87,7 @@ namespace BusinessLogic.Test
         [TestMethod]
         [ExpectedException(typeof(PostNotFoundExeption))]
         public void DeleteNonExistentTest() {
+            testRepo.Delete(25);
         }
     }
 }
