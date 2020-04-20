@@ -9,7 +9,7 @@ namespace BusinessLogic.Test
         PostsRepository testRepo;
         [TestInitialize]
         public void SetUp() {
-            testRepo = PostsRepository(); 
+            testRepo = new PostsRepository(); 
         }
 
         [TestMethod]
