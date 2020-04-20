@@ -20,5 +20,10 @@ namespace BusinessLogic
         {
             return !posts.Any();
         }
+
+        public bool Exists(int id)
+        {
+            return posts.Any(p => p.Id == id);
+        }
     }
 }

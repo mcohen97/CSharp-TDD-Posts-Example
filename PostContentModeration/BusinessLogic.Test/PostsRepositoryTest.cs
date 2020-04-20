@@ -33,7 +33,7 @@ namespace BusinessLogic.Test
 
         [TestMethod]
         public void NotExistsPostTest() {
-            Assert.IsFalse(testRepo.Exists(post.Id));
+            Assert.IsFalse(testRepo.Exists(10));
         }
     }
 }
