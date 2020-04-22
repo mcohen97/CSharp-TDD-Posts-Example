@@ -152,5 +152,13 @@ namespace BusinessLogic.Test
             Post testPost = new Post("A title", testBody, DateTime.Now);
             Assert.IsFalse(testPost.ContainsWord("word"));
         }
+
+        [TestMethod]
+        public void ToStringTest() {
+            DateTime now = DateTime.Now;
+            Post post = new Post("Title1", "Body1", now);
+            string toString = "Title: Title1 \nBody: Body1 \nPublished: " + now;
+            Assert.AreEqual(post.ToString(), toString);
+        }
     }
 }
