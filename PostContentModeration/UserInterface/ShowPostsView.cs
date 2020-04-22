@@ -25,12 +25,7 @@ namespace UserInterface
 
         private void FillList()
         {
-            lstPosts.DataSource = posts.GetAll().Select(p => FormatPost(p)).ToList();
-        }
-
-        private string FormatPost(Post post)
-        {
-            return $"Title: {post.Title} \tBody: {post.Body.Substring(0, Math.Min(post.Body.Length, 100))}... \tPublished date: {post.DatePublished}";
+            lstPosts.DataSource = posts.GetAll();
         }
     }
 }

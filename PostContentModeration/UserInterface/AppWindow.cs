@@ -19,15 +19,19 @@ namespace UserInterface
         {
             InitializeComponent();
             posts = new PostsRepository();
-            optionPanel.Controls.Add(new CreatePostView(posts));
+            AddCreatePostPanel();
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-           CreatePostView view = new CreatePostView(posts);
-           view.AddListener(PostCreated);
            ClearPanel();
-           optionPanel.Controls.Add(view);
+           AddCreatePostPanel();
+        }
+
+        private void AddCreatePostPanel() {
+            CreatePostView view = new CreatePostView(posts);
+            view.AddListener(PostCreated);
+            optionPanel.Controls.Add(view);
         }
 
         private void PostCreated() {
