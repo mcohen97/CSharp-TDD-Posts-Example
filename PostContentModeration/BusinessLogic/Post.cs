@@ -77,5 +77,10 @@ namespace BusinessLogic
 
             return tokens.Any(t => t.Equals(word));
         }
+
+        public override string ToString()
+        {
+            return $"Title: {Title} \nBody: {Body} \nPublished: {DatePublished}";
+        }
     }
 }
