@@ -35,6 +35,8 @@
             this.lbBody = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.lbError = new System.Windows.Forms.Label();
+            this.lbPubDate = new System.Windows.Forms.Label();
+            this.pubDatePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // createPostTitle
@@ -97,10 +99,28 @@
             this.lbError.Size = new System.Drawing.Size(0, 13);
             this.lbError.TabIndex = 8;
             // 
+            // lbPubDate
+            // 
+            this.lbPubDate.AutoSize = true;
+            this.lbPubDate.Location = new System.Drawing.Point(446, 97);
+            this.lbPubDate.Name = "lbPubDate";
+            this.lbPubDate.Size = new System.Drawing.Size(88, 13);
+            this.lbPubDate.TabIndex = 9;
+            this.lbPubDate.Text = "Publication Date:";
+            // 
+            // pubDatePicker
+            // 
+            this.pubDatePicker.Location = new System.Drawing.Point(568, 97);
+            this.pubDatePicker.Name = "pubDatePicker";
+            this.pubDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.pubDatePicker.TabIndex = 10;
+            // 
             // CreatePostView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pubDatePicker);
+            this.Controls.Add(this.lbPubDate);
             this.Controls.Add(this.lbError);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.lbBody);
@@ -124,5 +144,7 @@
         private System.Windows.Forms.Label lbBody;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Label lbError;
+        private System.Windows.Forms.Label lbPubDate;
+        private System.Windows.Forms.DateTimePicker pubDatePicker;
     }
 }

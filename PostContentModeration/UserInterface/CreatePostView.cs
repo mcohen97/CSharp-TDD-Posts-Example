@@ -32,9 +32,9 @@ namespace UserInterface
             try {
                 string title = txtTitle.Text;
                 string body = txtBody.Text;
+                DateTime pubDate = pubDatePicker.Value;
 
-                //TODO: Add date control
-                Post newPost = new Post(title, body, DateTime.Now);
+                Post newPost = new Post(title, body, pubDate);
                 posts.Add(newPost);
                 PostCreatedEvent();
             }
@@ -42,5 +42,6 @@ namespace UserInterface
                 lbError.Text = ex.Message;
             }
         }
+
     }
 }
