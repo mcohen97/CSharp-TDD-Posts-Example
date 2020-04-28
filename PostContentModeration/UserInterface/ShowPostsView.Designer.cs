@@ -31,6 +31,7 @@
             this.lbPosts = new System.Windows.Forms.Label();
             this.lstPosts = new System.Windows.Forms.ListBox();
             this.lbMessage = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbPosts
@@ -59,10 +60,21 @@
             this.lbMessage.Size = new System.Drawing.Size(0, 13);
             this.lbMessage.TabIndex = 3;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(633, 333);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete Post";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
             // ShowPostsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lbMessage);
             this.Controls.Add(this.lstPosts);
             this.Controls.Add(this.lbPosts);
@@ -77,5 +89,6 @@
         private System.Windows.Forms.Label lbPosts;
         private System.Windows.Forms.ListBox lstPosts;
         private System.Windows.Forms.Label lbMessage;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

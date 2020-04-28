@@ -7,7 +7,7 @@ namespace UserInterface
 {
     public partial class ShowPostsView : UserControl
     {
-        PostsRepository posts;
+        private PostsRepository posts;
 
         public ShowPostsView(PostsRepository repository)
         {
@@ -20,12 +20,21 @@ namespace UserInterface
             lbMessage.Text = message;
         }
 
-        private void SetUp() {
-        }
 
         private void FillList()
         {
+            lstPosts.DataSource = null;
             lstPosts.DataSource = posts.GetAll();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            Post selected = (Post)lstPosts.SelectedItem;
+            if (selected != null) {
+                posts.Delete(selected.Id);
+                lbMessage.Text = "Post deleted succesfully";
+                FillList();
+            }
         }
     }
 }
