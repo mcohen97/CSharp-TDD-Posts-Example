@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BusinessLogic
+namespace DataAccess
 {
     public class PostsRepository:IRepository<Post>
     {

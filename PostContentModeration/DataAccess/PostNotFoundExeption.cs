@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BusinessLogic
+namespace DataAccess
 {
     public class PostNotFoundExeption : Exception
     {

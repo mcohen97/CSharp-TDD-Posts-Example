@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BusinessLogic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BusinessLogic.Test
+namespace DataAccess.Test
 {
     [TestClass]
     public class PostsRepositoryTest
     {
-        PostsRepository testRepo;
+        private PostsRepository testRepo;
 
         [TestInitialize]
         public void SetUp() {
