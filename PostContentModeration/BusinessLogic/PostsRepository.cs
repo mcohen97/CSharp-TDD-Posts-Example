@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace BusinessLogic
 {
-    public class PostsRepository
+    public class PostsRepository:IRepository<Post>
     {
         private List<Post> posts;
 
