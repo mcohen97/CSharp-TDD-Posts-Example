@@ -42,10 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvalidPostException.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Post.cs" />
-    <Compile Include="PostAlreadyExistsExeption.cs" />
-    <Compile Include="PostNotFoundExeption.cs" />
-    <Compile Include="PostsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

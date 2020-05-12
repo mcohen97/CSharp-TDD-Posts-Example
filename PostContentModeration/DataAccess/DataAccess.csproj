@@ -56,7 +56,10 @@
       <DependentUpon>202005120107322_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PostAlreadyExistsExeption.cs" />
+    <Compile Include="PostNotFoundExeption.cs" />
     <Compile Include="PostsContext.cs" />
+    <Compile Include="PostsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

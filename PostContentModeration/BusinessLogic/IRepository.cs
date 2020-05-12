@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    interface IRepository
+    public interface IRepository<T>
     {
+        void Add(Post post);
+
+        bool IsEmpty();
+
+        bool Exists(int id);
+
+        Post Get(int id);
+
+        IEnumerable<Post> GetAll();
+
+        void Delete(int id);
     }
 }
