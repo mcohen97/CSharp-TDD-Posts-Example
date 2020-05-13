@@ -59,7 +59,7 @@
     <Compile Include="PostAlreadyExistsExeption.cs" />
     <Compile Include="PostNotFoundExeption.cs" />
     <Compile Include="PostsContext.cs" />
-    <Compile Include="PostsRepository.cs" />
+    <Compile Include="PostsMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

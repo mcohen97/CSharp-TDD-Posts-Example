@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace DataAccess
 {
-    public class PostsRepository:IRepository<Post>
+    public class PostsMemoryRepository:IRepository<Post>
     {
         private List<Post> posts;
 
-        public PostsRepository() {
+        public PostsMemoryRepository() {
             posts = new List<Post>();
         }
 

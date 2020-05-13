@@ -7,13 +7,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace DataAccess.Test
 {
     [TestClass]
-    public class PostsRepositoryTest
+    public class PostsMemoryRepositoryTest
     {
-        private PostsRepository testRepo;
+        private PostsMemoryRepository testRepo;
 
         [TestInitialize]
         public void SetUp() {
-            testRepo = new PostsRepository(); 
+            testRepo = new PostsMemoryRepository(); 
         }
 
         [TestMethod]

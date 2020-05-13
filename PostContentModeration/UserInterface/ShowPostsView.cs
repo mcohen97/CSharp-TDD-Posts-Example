@@ -8,16 +8,16 @@ namespace UserInterface
 {
     public partial class ShowPostsView : UserControl
     {
-        private PostsRepository posts;
+        private PostsMemoryRepository posts;
 
-        public ShowPostsView(PostsRepository repository)
+        public ShowPostsView(PostsMemoryRepository repository)
         {
             InitializeComponent();
             posts = repository;
             FillList();
         }
 
-        public ShowPostsView(PostsRepository repository, string message):this(repository) {
+        public ShowPostsView(PostsMemoryRepository repository, string message):this(repository) {
             lbMessage.Text = message;
         }
 
