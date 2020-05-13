@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class Posts : IMigrationMetadata
+    public sealed partial class PostEntities : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Posts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PostEntities));
         
         string IMigrationMetadata.Id
         {
-            get { return "202005131824034_Posts"; }
+            get { return "202005131656283_PostEntities"; }
         }
         
         string IMigrationMetadata.Source

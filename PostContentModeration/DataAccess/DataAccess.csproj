@@ -55,12 +55,13 @@
     <Compile Include="Migrations\202005120107322_initial.designer.cs">
       <DependentUpon>202005120107322_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005131824034_Posts.cs" />
-    <Compile Include="Migrations\202005131824034_Posts.designer.cs">
-      <DependentUpon>202005131824034_Posts.cs</DependentUpon>
+    <Compile Include="Migrations\202005131656283_PostEntities.cs" />
+    <Compile Include="Migrations\202005131656283_PostEntities.designer.cs">
+      <DependentUpon>202005131656283_PostEntities.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PostAlreadyExistsExeption.cs" />
+    <Compile Include="PostEntity.cs" />
     <Compile Include="PostNotFoundExeption.cs" />
     <Compile Include="PostsContext.cs" />
     <Compile Include="PostsDBRepository.cs" />
@@ -75,8 +76,8 @@
     <EmbeddedResource Include="Migrations\202005120107322_initial.resx">
       <DependentUpon>202005120107322_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005131824034_Posts.resx">
-      <DependentUpon>202005131824034_Posts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005131656283_PostEntities.resx">
+      <DependentUpon>202005131656283_PostEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
