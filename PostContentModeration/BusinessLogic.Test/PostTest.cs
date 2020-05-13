@@ -14,10 +14,8 @@ namespace BusinessLogic.Test
         [TestMethod]
         public void NewPostIdTest() {
             Post post1 = new Post("Title1", "Body1", DateTime.Now);
-            Post post2 = new Post("Title2", "Body2", DateTime.Now);
 
-            Assert.IsTrue(post1.Id > 0);
-            Assert.AreEqual(post1.Id +1, post2.Id);
+            Assert.AreEqual(0, post1.Id);
         }
 
         [TestMethod]
