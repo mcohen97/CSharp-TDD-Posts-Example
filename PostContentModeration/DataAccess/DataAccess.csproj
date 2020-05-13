@@ -55,10 +55,15 @@
     <Compile Include="Migrations\202005120107322_initial.designer.cs">
       <DependentUpon>202005120107322_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005131824034_Posts.cs" />
+    <Compile Include="Migrations\202005131824034_Posts.designer.cs">
+      <DependentUpon>202005131824034_Posts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PostAlreadyExistsExeption.cs" />
     <Compile Include="PostNotFoundExeption.cs" />
     <Compile Include="PostsContext.cs" />
+    <Compile Include="PostsDBRepository.cs" />
     <Compile Include="PostsMemoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202005120107322_initial.resx">
       <DependentUpon>202005120107322_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005131824034_Posts.resx">
+      <DependentUpon>202005131824034_Posts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
