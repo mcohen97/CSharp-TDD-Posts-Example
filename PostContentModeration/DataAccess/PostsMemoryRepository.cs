@@ -8,6 +8,7 @@ namespace DataAccess
     public class PostsMemoryRepository:IRepository<Post>
     {
         private List<Post> posts;
+        private static int NEXT_ID = 1;
 
         public PostsMemoryRepository() {
             posts = new List<Post>();
@@ -18,6 +19,12 @@ namespace DataAccess
             if (posts.Any(p => p.Id == post.Id)) {
                 throw new PostAlreadyExistsExeption();
             }
+
+            if (post.Id == 0) {
+                post.Id = NEXT_ID;
+                NEXT_ID++;
+            }
+
             posts.Add(post);
         }
         public bool IsEmpty()
