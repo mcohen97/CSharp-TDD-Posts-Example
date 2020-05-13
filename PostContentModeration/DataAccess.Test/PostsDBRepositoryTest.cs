@@ -15,6 +15,7 @@ namespace DataAccess.Test
         public void SetUp()
         {
             testRepo = new PostsDBRepository();
+            testRepo.Clear();
         }
 
         [TestMethod]
@@ -33,7 +34,7 @@ namespace DataAccess.Test
         [TestMethod]
         public void ExistsPostTest()
         {
-            Post post = new Post("Title", "Body", DateTime.Now);
+            Post post = new Post(2,"Title", "Body", DateTime.Now);
             testRepo.Add(post);
             Assert.IsTrue(testRepo.Exists(post.Id));
         }
@@ -56,7 +57,7 @@ namespace DataAccess.Test
         [TestMethod]
         public void GetPostTest()
         {
-            Post post = new Post("Title", "Body", DateTime.Now);
+            Post post = new Post(7, "Title", "Body", DateTime.Now);
             testRepo.Add(post);
             Assert.AreEqual(post.Title, testRepo.Get(post.Id).Title);
         }
