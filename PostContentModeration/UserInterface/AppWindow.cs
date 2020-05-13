@@ -14,12 +14,12 @@ namespace UserInterface
 {
     public partial class AppWindow : Form
     {
-        private PostsMemoryRepository posts;
+        private IRepository<Post> posts;
 
         public AppWindow()
         {
             InitializeComponent();
-            posts = new PostsMemoryRepository();
+            posts = new PostsDBRepository();
             AddCreatePostPanel();
         }
 

@@ -15,10 +15,10 @@ namespace UserInterface
     public delegate void HandleCreation();
     public partial class CreatePostView : UserControl
     {
-        private PostsMemoryRepository posts;
+        private IRepository<Post> posts;
         private event HandleCreation PostCreatedEvent;
 
-        public CreatePostView(PostsMemoryRepository repository)
+        public CreatePostView(IRepository<Post> repository)
         {
             InitializeComponent();
             posts = repository;

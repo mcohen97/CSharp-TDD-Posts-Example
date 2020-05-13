@@ -8,16 +8,16 @@ namespace UserInterface
 {
     public partial class ShowPostsView : UserControl
     {
-        private PostsMemoryRepository posts;
+        private IRepository<Post> posts;
 
-        public ShowPostsView(PostsMemoryRepository repository)
+        public ShowPostsView(IRepository<Post> repository)
         {
             InitializeComponent();
             posts = repository;
             FillList();
         }
 
-        public ShowPostsView(PostsMemoryRepository repository, string message):this(repository) {
+        public ShowPostsView(IRepository<Post> repository, string message):this(repository) {
             lbMessage.Text = message;
         }
 
@@ -25,7 +25,7 @@ namespace UserInterface
         private void FillList()
         {
             lstPosts.DataSource = null;
-            lstPosts.DataSource = posts.GetAll();
+            lstPosts.DataSource = posts.GetAll().ToList();
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
