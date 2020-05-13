@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,8 @@ namespace DataAccess
 
         }
 
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<PostEntity> Posts { get; set; }
+
 
     }
 }

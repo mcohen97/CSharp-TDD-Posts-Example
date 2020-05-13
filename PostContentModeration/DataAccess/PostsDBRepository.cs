@@ -12,7 +12,22 @@ namespace DataAccess
         public void Add(Post post)
         {
             using (PostsContext context = new PostsContext()) {
-                context.Posts.Add(post);
+                if (context.Posts.Any(p => p.Id == post.Id)) {
+                    throw new PostAlreadyExistsExeption();
+                }
+
+                PostEntity toAdd = toEntity(post);
+                context.Posts.Add(toAdd);
+                context.SaveChanges();
+                post.Id = toAdd.Id;
+            }
+        }
+
+        public void Clear()
+        {
+            using (PostsContext context = new PostsContext())
+            {
+                context.Posts.RemoveRange(context.Posts);
                 context.SaveChanges();
             }
         }
@@ -21,7 +36,7 @@ namespace DataAccess
         {
             using (PostsContext context = new PostsContext())
             {
-                Post toRemove = context.Posts.First(p => p.Id == id);
+                PostEntity toRemove = context.Posts.FirstOrDefault(p => p.Id == id);
 
                 if (toRemove == null)
                 {
@@ -45,14 +60,14 @@ namespace DataAccess
         {
             using (PostsContext context = new PostsContext())
             {
-                Post found = context.Posts.First(p => p.Id == id);
+                PostEntity found = context.Posts.FirstOrDefault(p => p.Id == id);
 
                 if (found == null)
                 {
                     throw new PostNotFoundExeption();
                 }
 
-                return found;
+                return toObject(found);
             }
         }
 
@@ -60,7 +75,8 @@ namespace DataAccess
         {
             using (PostsContext context = new PostsContext())
             {
-                return context.Posts;
+                IEnumerable<PostEntity> retrieved = context.Posts.ToList();
+                return retrieved.Select(p => toObject(p));
             }
         }
 
@@ -70,6 +86,22 @@ namespace DataAccess
             {
                 return !context.Posts.Any();
             }
+        }
+
+        private PostEntity toEntity(Post post) {
+            return new PostEntity()
+            {
+                Id = post.Id,
+                Title = post.Title,
+                Body = post.Body,
+                PublishedDate = post.DatePublished
+            };
+
+        }
+
+        private Post toObject(PostEntity entity) {
+            return new Post(entity.Id, entity.Title, entity.Body, entity.PublishedDate);
+
         }
     }
 }
