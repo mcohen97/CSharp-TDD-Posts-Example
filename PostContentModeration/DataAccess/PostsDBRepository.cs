@@ -16,7 +16,7 @@ namespace DataAccess
                     throw new PostAlreadyExistsExeption();
                 }
 
-                PostEntity toAdd = toEntity(post);
+                PostEntity toAdd = ToEntity(post);
                 context.Posts.Add(toAdd);
                 context.SaveChanges();
                 post.Id = toAdd.Id;
@@ -67,7 +67,7 @@ namespace DataAccess
                     throw new PostNotFoundExeption();
                 }
 
-                return toObject(found);
+                return ToObject(found);
             }
         }
 
@@ -76,7 +76,7 @@ namespace DataAccess
             using (PostsContext context = new PostsContext())
             {
                 IEnumerable<PostEntity> retrieved = context.Posts.ToList();
-                return retrieved.Select(p => toObject(p));
+                return retrieved.Select(p => ToObject(p));
             }
         }
 
@@ -88,7 +88,7 @@ namespace DataAccess
             }
         }
 
-        private PostEntity toEntity(Post post) {
+        private PostEntity ToEntity(Post post) {
             return new PostEntity()
             {
                 Id = post.Id,
@@ -99,7 +99,7 @@ namespace DataAccess
 
         }
 
-        private Post toObject(PostEntity entity) {
+        private Post ToObject(PostEntity entity) {
             return new Post(entity.Id, entity.Title, entity.Body, entity.PublishedDate);
 
         }

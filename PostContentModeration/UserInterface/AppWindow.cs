@@ -19,7 +19,8 @@ namespace UserInterface
         public AppWindow()
         {
             InitializeComponent();
-            posts = new PostsDBRepository();
+            //posts = new PostsDBRepository();
+            posts = new PostsMemoryRepository();
             AddCreatePostPanel();
         }
 
