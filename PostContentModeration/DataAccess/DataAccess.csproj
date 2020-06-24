@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataUnavailableException.cs" />
     <Compile Include="Migrations\202005120107322_initial.cs" />
     <Compile Include="Migrations\202005120107322_initial.designer.cs">
       <DependentUpon>202005120107322_initial.cs</DependentUpon>
