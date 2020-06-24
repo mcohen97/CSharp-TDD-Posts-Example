@@ -25,7 +25,13 @@ namespace UserInterface
         private void FillList()
         {
             lstPosts.DataSource = null;
-            lstPosts.DataSource = posts.GetAll().ToList();
+            try
+            {
+                lstPosts.DataSource = posts.GetAll().ToList();
+            }
+            catch (DataUnavailableException e) {
+                Alerts.CrashApp(e.Message);
+            }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
