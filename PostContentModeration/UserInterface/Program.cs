@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BusinessLogic;
+using DataAccess;
+using System;
 using System.Windows.Forms;
 
 namespace UserInterface
@@ -14,9 +13,10 @@ namespace UserInterface
         [STAThread]
         static void Main()
         {
+            IRepository<Post>  posts = new PostsDBRepository();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AppWindow());
+            Application.Run(new AppWindow(posts));
         }
     }
 }
