@@ -1,9 +1,9 @@
 ﻿using BusinessLogic;
-using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.Entity.Core;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess
 {
@@ -73,6 +73,24 @@ namespace DataAccess
 
         public IEnumerable<Post> GetAll()
         {
+            try
+            {
+            return TryGetAll();
+            }
+            catch (SqlException)
+            {
+                throw new DataUnavailableException();
+            }
+            catch (DbException)
+            {
+                throw new DataUnavailableException();
+            }
+            catch (EntityException) {
+                throw new DataUnavailableException();
+            }
+        }
+
+       private IEnumerable<Post> TryGetAll() {
             using (PostsContext context = new PostsContext())
             {
                 IEnumerable<PostEntity> retrieved = context.Posts.ToList();
