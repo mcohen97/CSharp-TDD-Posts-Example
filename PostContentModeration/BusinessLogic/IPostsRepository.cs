@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public interface IRepository<T>
+    public interface IPostsRepository
     {
         void Add(Post post);
 

@@ -13,7 +13,7 @@ namespace UserInterface
         [STAThread]
         static void Main()
         {
-            IRepository<Post>  posts = new PostsDBRepository();
+            IPostsRepository  posts = new PostsDBRepository();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AppWindow(posts));

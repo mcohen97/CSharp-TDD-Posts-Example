@@ -6,9 +6,9 @@ namespace UserInterface
 {
     public partial class AppWindow : Form
     {
-        private IRepository<Post> posts;
+        private IPostsRepository posts;
 
-        public AppWindow(IRepository<Post> dataSource)
+        public AppWindow(IPostsRepository dataSource)
         {
             InitializeComponent();
             posts = dataSource;

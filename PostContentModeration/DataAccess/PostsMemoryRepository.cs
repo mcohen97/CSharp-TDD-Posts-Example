@@ -5,10 +5,10 @@ using System.Linq;
 
 namespace DataAccess
 {
-    public class PostsMemoryRepository:IRepository<Post>
+    public class PostsMemoryRepository:IPostsRepository
     {
         private List<Post> posts;
-        private static int NEXT_ID = 1;
+        private static int NextId = 1;
 
         public PostsMemoryRepository() {
             posts = new List<Post>();
@@ -21,8 +21,8 @@ namespace DataAccess
             }
 
             if (post.Id == 0) {
-                post.Id = NEXT_ID;
-                NEXT_ID++;
+                post.Id = NextId;
+                NextId++;
             }
 
             posts.Add(post);

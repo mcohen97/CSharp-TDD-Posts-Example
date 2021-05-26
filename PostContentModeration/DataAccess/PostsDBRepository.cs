@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace DataAccess
 {
-    public class PostsDBRepository : IRepository<Post>
+    public class PostsDBRepository : IPostsRepository
     {
         public void Add(Post post)
         {

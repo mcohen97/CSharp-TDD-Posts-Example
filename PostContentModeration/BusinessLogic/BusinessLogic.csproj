@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InvalidPostException.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IPostsRepository.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
